@@ -2,6 +2,7 @@ import cv2, os
 
 k_median_size = 3
 k_laplace_size = 7
+threshold_value = 120
 
 # img = cv2.imread(os.path.join(os.getcwd(), 'part_1', 'tarboosh.jpeg'))
 img = cv2.imread(os.path.join(os.getcwd(), 'tarboosh.jpeg'))
@@ -15,16 +16,11 @@ img_median_blur = cv2.medianBlur(img_gray, k_median_size)
 
 img_edge = cv2.Laplacian(img_gray, cv2.CV_16S, ksize=k_laplace_size)
 # cv2.imshow('img_edge', img_edge)
-min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(img_edge)
-img_edge_scaled = ((img_edge - min_val) / (2*max_val)) * 255
-# img_edge_scaled = cv2.normalize(img_edge, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_16S)
-# print(img_edge_scaled.shape, img_edge.shape)
-# print(img_edge_scaled.min(), img_edge.min())
-# print(img_edge_scaled.max(), img_edge.max())
-# print(min_val, max_val, min_loc, max_loc )
-# print(img_edge_scaled)
+# min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(img_edge)
+# img_edge_scaled = (((img_edge - min_val) / (2*max_val)) * 255).astype(int).astype(float)
+img_edge_scaled = cv2.normalize(img_edge, None, alpha=0,beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_16S).astype(float)
 
-ret, thresh = cv2.threshold(img_edge_scaled, 100, 255, cv2.THRESH_BINARY)
+ret, thresh = cv2.threshold(img_edge_scaled, threshold_value, 255, cv2.THRESH_BINARY)
 cv2.imshow('thresh', thresh)
 
 cv2.waitKey(0)
