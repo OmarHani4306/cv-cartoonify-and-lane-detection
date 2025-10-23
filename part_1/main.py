@@ -20,8 +20,8 @@ img_edge = cv2.Laplacian(img_gray, cv2.CV_16S, ksize=k_laplace_size)
 # img_edge_scaled = (((img_edge - min_val) / (2*max_val)) * 255).astype(int).astype(float)
 img_edge_scaled = cv2.normalize(img_edge, None, alpha=0,beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_16S).astype(float)
 
-ret, thresh = cv2.threshold(img_edge_scaled, threshold_value, 255, cv2.THRESH_BINARY)
-cv2.imshow('thresh', thresh)
+ret, img_thresh = cv2.threshold(img_edge_scaled, threshold_value, 255, cv2.THRESH_BINARY)
+cv2.imshow('img_thresh', img_thresh)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
