@@ -23,6 +23,9 @@ img_edge_scaled = cv2.normalize(img_edge, None, alpha=0,beta=255, norm_type=cv2.
 ret, img_thresh = cv2.threshold(img_edge_scaled, threshold_value, 255, cv2.THRESH_BINARY)
 cv2.imshow('img_thresh', img_thresh)
 
+filename = "img_thresh.jpg"
+cv2.imwrite(filename, img_thresh)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
