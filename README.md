@@ -43,7 +43,7 @@ Detecting lines corresponding to lane boundaries using parametric voting space.
 
 1. **Preprocessing & Smoothing:** Applies a 2D Median filter to blur the image and reduce noise.
 2. **Edge Detection:** Utilizes the **Canny Edge Detection** algorithm with high thresholds to isolate strong structural edges.
-3. **Region of Interest (ROI) Extraction:** * A predefined polygon mask is applied to the edge image to crop out the sky, dashboard, and off-road scenery, leaving only the road surface.
+3. **Region of Interest (ROI) Extraction:**  A predefined polygon mask is applied to the edge image to crop out the sky, dashboard, and off-road scenery, leaving only the road surface.
 4. **Hough Transform Accumulation:**
    * Maps edge pixels into the $(\rho, \theta)$ parameter space based on the normal line equation:
      $$x \cos \theta + y \sin \theta = \rho$$
@@ -66,7 +66,7 @@ Detecting lines corresponding to lane boundaries using parametric voting space.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/cv-cartoonify-lane-detection.git](https://github.com/yourusername/cv-cartoonify-lane-detection.git)
+   git clone [https://github.com/OmarHani4306/cv-cartoonify-lane-detection.git](https://github.com/OmarHani4306/cv-cartoonify-lane-detection.git)
    cd cv-cartoonify-lane-detection
    ```
 
