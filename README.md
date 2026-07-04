@@ -66,9 +66,9 @@ Detecting lines corresponding to lane boundaries using parametric voting space.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/OmarHani4306/cv-cartoonify-and-lane-detection.git] (https://github.com/OmarHani4306/cv-cartoonify-and-lane-detection.git)
-   cd cv-cartoonify-lane-detection
-   ```
+    git clone https://github.com/OmarHani4306/cv-cartoonify-and-lane-detection.git
+    cd cv-cartoonify-lane-detection
+    ```
 
 2. **Install dependencies:**
    ```bash
